@@ -59,9 +59,6 @@ export default function Signup() {
     try {
       await fetchData("/auth/signup", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
         body: new URLSearchParams({ email, password, firstName, lastName }),
       });
       setIsLoading(false);

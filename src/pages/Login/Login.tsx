@@ -51,9 +51,6 @@ export default function Login() {
     try {
       const user = await fetchData("/auth/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
         body: new URLSearchParams({ email, password }),
       });
       setCurrentUser(user);

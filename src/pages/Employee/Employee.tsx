@@ -3,6 +3,13 @@ import EmployeeItem from "components/EmployeeItem";
 import React, { useEffect, useState } from "react";
 import { fetchData } from "services/fetchData";
 
+export type User = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  avatar: string;
+};
+
 export default function Employee() {
   const [users, setUsers] = useState<any>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +32,7 @@ export default function Employee() {
 
   return (
     <SimpleGrid columns={[1, 1, 2, 3, 4]} spacing="40px">
-      {users.map((user: any) => {
+      {users.map((user: User) => {
         const name = user.firstName + " " + user.lastName;
         return <EmployeeItem key={user.id} name={name} avatar={user.avatar} />;
       })}
