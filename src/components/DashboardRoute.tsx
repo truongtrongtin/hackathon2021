@@ -16,7 +16,7 @@ export default function DashboardRoute({
 }: DashboardRouteProps) {
   const { currentUser } = useContext(AppContext);
 
-  if (!currentUser) return <Redirect to="/login" />;
+  // if (!currentUser) return <Redirect to="/login" />;
   return (
     <Route path={path}>
       <Header />

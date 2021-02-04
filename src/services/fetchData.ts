@@ -1,7 +1,12 @@
 export async function fetchData(endpoint: string, option?: RequestInit) {
-  const defaultOption: RequestInit = { credentials: "include", ...option };
+  const defaultOption: RequestInit = {
+    headers: {
+      Authorization: "ApiKey Bbk6fUp5oE6oWT",
+    },
+    ...option,
+  };
   const response = await fetch(
-    process.env.REACT_APP_API_URL! + endpoint,
+    "https://api.gridly.com/v1/views/medej8v1n0qyl8" + endpoint,
     defaultOption
   );
   const text = await response.text();
